@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+<ul>
+  <a *ngIf="_authservice.isLogged()" routerLink="tasks">List Task</a>
+</ul>
+<ul>
+    <a *ngIf="_authservice.isLogged()"  routerLink="create">Create Task</a>
+  </ul>
+  <span class="spacer"></span>
+  <ul>
+    <a *ngIf="!_authservice.isLogged()"  mat-button routerLink="signup">Sign Up</a>
+    <a *ngIf="!_authservice.isLogged()"  mat-button routerLink="login">Log in</a>
+    <a  *ngIf="_authservice.isLogged()" (click)="_authservice.logout()"  mat-button>Logout</a>
+   
+
+
+  </ul>
+</mat-toolbar>
